@@ -6,6 +6,9 @@
 
 
 <style type="text/css"> 
+body{
+	background-image: url("nasty_fabric.png");
+}
 legend 
 {
 	color: blue;
@@ -30,7 +33,28 @@ legend
   margin-bottom:0px;
   margin-left:16px;
 }
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
 
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}	
 
 </style>
 
@@ -77,6 +101,7 @@ legend
         	var MoyUnite5 =  (((réseau*0.8+RTD*0.2)/2)*1.5+(securite*0.5)/2);
         	var MoyUnite6 = ((complexite*0.5) + ((compilation*0.8+CompilationTD*0.2)/2 *1.5)/2);
         		var result = ((MoyUnite1+MoyUnite2+MoyUnite3+MoyUnite4+MoyUnite5+MoyUnite6)/6);
+        		alert("Votre moyen est "); 
 				alert(result.toFixed(2));
 	}
 
@@ -85,7 +110,7 @@ legend
 </head>
 <body>
 <center><h1>Calcul moyenne 3LIAG </h1></center>
-
+<center> 
 <p> <h3> Veuillez Saisir Vos Note SVP </h3> </p> <br>
 <form name="f" action="">
 	<fieldset>
@@ -174,8 +199,10 @@ Compléxité Algorithmique : <input type="text" name="Compléxité" size="12"> <
 <center>
 
 
-	<input type="submit" name="Button" value="Calculer" onclick="calcmoy()"> </center>
+	<input class="button" type="submit" name="Button" value="Calculer" onclick="calcmoy()"> </center>
 </form>
+</center>
 
+ 
 </body>
 </html>
