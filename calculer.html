@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moyenne</title>
+	<meta charset="utf-8">
+
+
+<style type="text/css"> 
+legend 
+{
+	color: blue;
+}
+
+h3
+{
+	color: red;
+}
+fieldset
+{
+    border:2px solid grey;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;	
+    margin: 12px;
+     background-color:#CCC;
+     width: 50%;
+}
+legend
+{
+  margin-bottom:0px;
+  margin-left:16px;
+}
+
+
+</style>
+
+<script type="text/javascript">
+	function calcmoy()
+	{
+		var mobile = parseInt(document.f.DEV.value);
+		var IA = parseInt(document.f.IA.value);
+		var pfe = parseInt(document.f.PFE.value);
+		var anglais = parseInt(document.f.Anglais.value);
+		var francais= parseInt(document.f.Francais.value);
+		var technique = parseInt(document.f.Technique.value);
+		var travail = parseInt(document.f.Travail.value);
+		var bd= parseInt(document.f.Bd.value);
+		var ECommerce = parseInt(document.f.ECommerce.value);
+		var sOA = parseInt(document.f.SOA.value);
+		var réseau = parseInt(document.f.Réseau.value);
+		var securite = parseInt(document.f.securite.value);
+        var compilation = parseInt(document.f.Compilation.value);
+        var complexite = parseInt(document.f.Compléxité.value);
+ 
+
+			// variable for les TD 
+				var BdTD = parseInt(document.f.BdTD.value);
+				var RéseauTD = parseInt(document.f.RéseauTD.value);
+				var AnglaisTD = parseInt(document.f.AnglaisTD.value);
+				var TravailTD = parseInt(document.f.TravailTD.value);
+				var TechniqueTD = parseInt(document.f.TechniqueTD.value);
+				var CompilationTD = parseInt(document.f.compilation.value);
+				var PFETD = parseInt(document.f.PFETD.value);
+				var mobileTD = parseInt(document.f.DEVTD.value);
+				var IATD = parseInt(document.f.IATD.value);
+				var SOATD = parseInt(document.f.SOATD.value);
+				var FrancaisTD = parseInt(document.f.FrancaisTD.value);
+
+
+
+
+			// variable pour les unties 		
+        	var MoyUnite1 = (((mobile*0.8 + mobileTD*0.2)/3) + ((IA*0.8+IATD*0.2)) +(((pfe*0.8 + PFETD*0.2)/2)*1.5))/3.5;
+        	var MoyUnite2 = (((anglais*0.7+AnglaisTD*0.3)/2) +((francais*0.7+FrancaisTD*0.3)/2)+((technique*0.7+TechniqueTD*0.3)/2))/3; 
+        	var MoyUnite3 = (((travail*0.8 + TravailTD*0.2)/2) + (((bd*0.8+BdTD*0.2)/2 *1.5)/2.5));
+        	var MoyUnite4 = (ECommerce +((sOA*0.8+SOATD*0.2)/2 *1.5)/2.5);
+        	var MoyUnite5 = (((((Réseau*0.8+RéseauTD*0.2)/2 *1.5)/2.5));+ (securite*0.5))/2;
+        	var MoyUnite6 = ((complexite*0.5) + ((compilation*0.8+CompilationTD*0.2)/2 *1.5)/2);
+
+				alert((MoyUnite1 +MoyUnite2+MoyUnite3+MoyUnite4+MoyUnite5+MoyUnite6)/6);
+	}
+
+</script>
+
+</head>
+<body>
+<center><h1>Calcul moyenne 3LIAG </h1></center>
+
+<p> <h3> Veuillez Saisir Vos Note SVP </h3> </p> <br>
+<form name="f" action="">
+	<fieldset>
+		<legend> Unité 1</legend>
+	<table>
+		<tr> 
+	 <td> Développement Mobile : </td> <td> <input type="text" name="DEV" size="12"> <br> </td>
+	 <td> TD: </td> <td> <input type="text" name="DEVTD" size="12">  </td>
+	</tr>
+	<tr>
+
+    <td> IA : </td> <td> <input type="text" name="IA" size="12"> <br> </td>
+    <td> TD: </td> <td> <input type="text" name="IATD" size="12"> <br></td>
+</tr>
+<tr>
+  <td>  Préparation au PFE  : </td> <td> <input type="text" name="PFE" size="12"> <br> </td>
+  <td> TD: </td> <td> <input type="text" name="PFETD" size="12"></td>
+</tr>
+</table>
+</fieldset>
+
+<fieldset> 
+	<legend> Unité  2 </legend>
+<table>
+	<tr>
+
+<td> Anglais :</td> <td>  <input type="text" name="Anglais" size="12"> <br> </td>
+<td> TD : </td> <td> <input type="text" name="AnglaisTD" size="12"> </td>
+</tr>
+<tr>
+<td> Français :</td> <td> <input type="text" name="Francais" size="12"> </td> <br>
+<td>TD : </td> <td><input type="text" name="FrancaisTD size="12"></td>
+</tr>
+<tr>
+<td> Technique de communication : </td> <td> <input type="text" name="Technique" size="12"> <br></td>
+<td>TD : </td> <td><input type="text" name="TechniqueTD" size="12"></td>
+</tr>
+</table>
+
+
+
+</fieldset>
+
+
+<fieldset> 
+	<legend> Unité  3 </legend>
+	<table>
+		<tr>
+
+<td> Travail  Collaboratif : </td> <td><input type="text" name="Travail" size="12"> <br> </td>
+<td>TD : </td> <td><input type="text" name="TravailTD" size="12"> </td> </tr> <tr>
+<td> Base de donnée réparti : </td> <td> <input type="text" name="Bd" size="12"> <br> </td>
+<td>TD : </td> <td><input type="text" name="BdTD" size="12"></td> </tr>
+</table>
+</fieldset>
+
+
+<fieldset> 
+	<legend> Unité  4 </legend>
+	<table>
+		<tr>
+
+E-Commerce: <input type="text" name="ECommerce" size="12"> <br>
+<td> Architecture Orienté Service : </td> <td> <input type="text" name="SOA" size="12"> </td> <br>
+<td> TD: </td> <td> <input type="text" name="SOATD" size="12"> </td>
+</tr> </table> 
+</fieldset>
+
+<fieldset> 
+	<legend> Unité  5 </legend> <table> <tr> 
+<td> Réseau d'entreprise : </td> <td>  <input type="text" name="Réseau" size="12"> </td> <br>
+<td>TD: </td> <td><input type="text" name="RéseauTD" size="12"></td>
+Sécurité Informatique : <input type="text" name="securite" size="12"> <br>
+</tr></table>
+</fieldset>
+
+<fieldset> 
+	<legend> Unité  6 </legend>
+	<table> <tr> 
+<td> Compilation : </td> <td> <input type="text" name="Compilation" size="12">  </td> <br>
+<td> TD: </td> <td><input type="text" name="CompilationTD" size="12"></td>
+Compléxité Algorithmique : <input type="text" name="Compléxité" size="12"> <br>
+</tr> </table>
+</fieldset>
+
+<center>
+<div class="wrapper">
+
+  <div class="button">
+    <span class="button__mask"></span>
+    <input class="button__text" type="submit" name="Button" value="Calculer" onclick="calcmoy()">
+   
+  </div> 
+
+	 </center>
+</form>
+
+</body>
+</html>
