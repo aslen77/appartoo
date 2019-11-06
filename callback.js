@@ -1,44 +1,34 @@
-var a=prompt("donner le le nombre prmier","a");
+var a=prompt("donner le premier nombre","a");
 var b=prompt("donner le deuxieme nombre","b");
 var choix=prompt("choisir votre mode entre Produit ou Somme","");
-//fonction de somme 
-function somme(a,b){
-     
-   x=a+b;
-   alert(x);
+function somme(){
+    return parseInt(a)+parseInt(b);
 }
-// fonction du Produit 
-function Produit(a,b){
+function Produit(){
     return parseInt(a)*parseInt(b);
 }
-// fonction de calculatrice 
-function calculatrice(callback){
-    
-if(choix ='somme')
-{
-    alert("le choix que vous avez fait est la somme ");
-        callback(somme);
-}   else if(choix='produit')
-{
-    alert("le choix que vous avez fait est la multiplication ");
-    callback(Produit);
-}  
-else 
-{
-    alert('erreur');
-}
+
+function verificationChoix(){
+    switch(choix){
+        case 'somme':
+        {
+        alert("l'addition et le resultat est");
+        alert(somme());}
+        break;
+        case 'produit':
+        {
+            alert("la multiplication et le resultat est");
+            alert(Produit());}
+        break;
+        default:
+        alert("faute de frape");
+        
+    }
+
 }
 
-  
-calculatrice(choix);
+function Afficher(verificationChoix){
+    alert("le choix que vous avez choisit est");
+}
 
-function salutation(name) {
-    alert('Bonjour ' + name);
-  }
-  
-  function processUserInput(callback) {
-    var name = prompt('Entrez votre nom.');
-    callback(name);
-  }
-  
-  processUserInput(salutation);
+verificationChoix(Afficher());
