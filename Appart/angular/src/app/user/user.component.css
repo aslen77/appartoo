@@ -1,0 +1,24 @@
+.buttonL { 
+    text-align: center;
+  }
+  .buttonL > button { 
+   margin: 0 22px;
+  }
+  .buttonL > a { 
+      margin:0 22px;
+  }
+  .form-horizontal{ 
+      margin-top: 15%; 
+  }
+.pangolin-img { 
+    margin-left: 120px;
+    width: 300px;
+    height: auto;
+  }
+  
+  body{ 
+      background-image: url("../../assets/logo1.png");
+  }
+  .panel{ 
+      box-shadow: 20px 30px 20px rgba(0, 0, 0, 0.8);
+  }

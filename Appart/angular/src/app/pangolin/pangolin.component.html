@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <h1>Carnet d'adresse Pangolins</h1> 
+    </div>
+</div>
+
+<form #pangolinForm ="ngForm">
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Référence(Id)</th>
+        <th scope="col">Age</th>
+        <th scope="col">Famille</th>
+        <th scope="col">Race</th>
+        <th scope="col">nourriture</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= " let pang of pangolinService.pangolins">
+        <th>{{pang._id}}</th>
+        <th>{{pang.age}}</th>
+        <td>{{pang.famille}}</td>
+        <td>{{pang.race}}</td>
+        <td>{{pang.nourriture}}</td> 
+        <td><button type="submit" class="btn btn-succees" (click) = "onEdit(pang)">modifier</button><button type="submit" class="btn btn-danger" (click) = "onDelete(pang._id, pangolinForm)">Supprimer</button></td>
+      </tr>
+     
+      
+    </tbody>
+  </table>
+</form>
+
+
+<form class="form-add" #pangForm ="ngForm" (ngSubmit)="onSubmit(pangForm)">
+    <!--  General -->
+    <div class="form-group">
+                <h5 class="heading">Ajouter un pangolin</h5>
+                <div class="controls">
+                    <input type="number" id="age" class="floatLabel" name="age" placeholder="Age" #name="ngModel" [(ngModel)]= "pangolinService.selectedPangolin.age " />
+                </div>
+                <div class="controls">
+                    <input type="text" id="famille" class="floatLabel" name="famille" #name="ngModel" placeholder="Famille" [(ngModel)]= "pangolinService.selectedPangolin.famille "/>
+                </div>
+                <div class="controls">
+                    <input type="text" id="race" class="floatLabel" name="race" placeholder="Race" #name="ngModel" [(ngModel)]= "pangolinService.selectedPangolin.race "/> 
+                </div>  
+
+                <div class="controls">
+                    <input type="text" id="nourriture" class="floatLabel" name="nourriture" #name="ngModel" placeholder="Nourriture" [(ngModel)]= "pangolinService.selectedPangolin.nourriture"/>
+                </div>
+      </div>
+      <div class="container-button">
+        <button type="submit" id="enregistrer"  class="btn btn-success"> Enregistrer</button>
+        <button type="submit" id="lougout" (click)="navigateToLogin(pangForm)" class="btn btn-danger"> deconnexion</button>  
+      </div>
+</form>

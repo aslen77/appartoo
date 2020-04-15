@@ -1,0 +1,47 @@
+<body>
+    
+
+<div class="container">    
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+        <div class="panel panel-info">
+              <img class=" pangolin-img "src="../../assets/Pangolin.jpg" alt="Pangolin">
+                <div class="backrgound"></div>
+                <div style="padding-top:30px" class="panel-body" >
+
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                        
+                    <form class="form-add" #userForm ="ngForm" >                                
+                        <div style="margin-bottom: 25px" class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input  type="email" class="form-control" id="email" name="email" value="" #name="ngModel" [(ngModel)]="userService.selectedUser.email " placeholder="Login" ng-model="myInput" required="required" ngModel= email>                                        
+                                </div>
+                            
+                        <div style="margin-bottom: 25px" class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input id="login-password" type="password" class="form-control" name="password" #name="ngModel" [(ngModel)]= "userService.selectedUser.password " placeholder="password" >
+                                </div>
+                      
+
+                            <div style="margin-top:10px" class="form-group">
+                                <!-- Button -->
+                                <div class="row">
+                                    <div class="col-lg-12" class="buttonL" >
+                                        <!-- <button id="btn-login" routerLink="pangolins" class="btn btn-success" type="submit" >Se connecter </button> -->
+                                        <button id="btn-login" routerLink=" " type="onclick" class="btn btn-success" (click)="authentifier(userForm) ">authentifier </button>
+                                        <button id="btn-login" routerLink=" " type="onclick" class="btn btn-primary" (click)="inscription(userForm)"  >inscription </button>
+                                      </div>
+                                  </div>
+                                </div>
+                               
+                        </form>     
+
+
+
+                    </div>                     
+                </div>  
+    </div>
+    
+</div>
+
+
+</body>
